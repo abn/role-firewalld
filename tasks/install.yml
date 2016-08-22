@@ -1,0 +1,16 @@
+---
+- name: install firewalld
+  become: yes
+  package:
+    name: firewalld
+    state: present
+
+- name: start and enable firewalld
+  become: yes
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
+- set_fact:
+    role_firewalld_installed: yes

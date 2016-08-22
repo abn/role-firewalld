@@ -1,0 +1,11 @@
+---
+- include: install.yml
+  when: role_firewalld_installed is not defined
+  tags:
+    - firewalld
+    - firewalld-install
+
+- include: config.yml
+  tags:
+    - firewalld
+    - firewalld-config
